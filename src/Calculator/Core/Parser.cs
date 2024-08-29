@@ -115,6 +115,7 @@ public class Parser
 
         return true;
     }
+    
     private bool ProcessForFunctions()
     {
         if (! char.IsLetter(_expression[_position]))
