@@ -159,7 +159,7 @@ public class Parser
                     _stack.Pop();
                 }
 
-                if (char.IsLetter(_stack.Peek()[0]))
+                if (_stack.Count > 0 && char.IsLetter(_stack.Peek()[0]))
                 {
                     _queue.Enqueue(Element.Create(_stack.Pop()));
                 }
