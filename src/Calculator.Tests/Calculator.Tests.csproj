@@ -11,4 +11,8 @@
       <PackageReference Include="xunit" Version="2.9.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Calculator\Calculator.csproj" />
+    </ItemGroup>
+
 </Project>
