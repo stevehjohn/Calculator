@@ -88,6 +88,15 @@ public class Parser
 
     private bool ProcessForNumbers()
     {
+        if (_expression[_position] == 'π')
+        {
+            _queue.Enqueue(Element.Create(Math.PI));
+            
+            _position++;
+            
+            return true;
+        }
+
         if (! (char.IsDigit(_expression[_position]) || _expression[_position] == '.'))
         {
             return false;
