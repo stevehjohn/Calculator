@@ -159,6 +159,11 @@ public class Parser
                     _stack.Pop();
                 }
 
+                if (char.IsLetter(_stack.Peek()[0]))
+                {
+                    _queue.Enqueue(Element.Create(_stack.Pop()));
+                }
+
                 _position++;
 
                 return true;

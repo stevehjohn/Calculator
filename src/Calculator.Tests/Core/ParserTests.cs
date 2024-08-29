@@ -20,7 +20,7 @@ public class ParserTests
     [InlineData("2 + 5 % 2", "2 5 2 % +")]
     [InlineData("5! + 1", "5 ! 1 +")]
     [InlineData("5! - 1", "5 ! 1 -")]
-    [InlineData("sin(max(2, 3) / 3 * 1)", "2 3 max 3 / 1 sin")]
+    [InlineData("sin(max(2, 3) / 3 * 1)", "2 3 max 3 / 1 * sin")]
     [InlineData("π + 1", "3.141592653589793 1 +")]
     public void ParsesExpressionsCorrectly(string expression, string expected)
     {
