@@ -12,6 +12,8 @@ public class Parser
 
     private TokenType _previousTokenType;
 
+    private string _previousSymbol;
+
     public Queue<Element> Parse(string expression)
     {
         Initialise(expression);
@@ -61,6 +63,8 @@ public class Parser
         _expression = expression;
 
         _previousTokenType = TokenType.None;
+
+        _previousSymbol = string.Empty;
     }
 
     private bool ProcessForWhitespace()
@@ -132,7 +136,7 @@ public class Parser
     {
         var symbol = _expression[_position].ToString();
         
-        if (_previousTokenType != TokenType.Number && symbol == "-")
+        if (_previousTokenType != TokenType.Number && symbol == "-" && _previousSymbol != "!")
         {
             symbol = "--";
         }
@@ -143,6 +147,8 @@ public class Parser
             
             symbol = $"{symbol}{_expression[_position]}";
         }
+
+        _previousSymbol = symbol;
 
         var precedence = GetPrecedence(symbol);
 
