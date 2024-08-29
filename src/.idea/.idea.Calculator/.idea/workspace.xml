@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba2b9180-b3df-4c7d-b12a-37a13f3798c1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculator.Tests/Calculator.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator.Tests/Calculator.Tests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculator/Calculator.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/Calculator.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator.Tests/Core/ParserTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator.Tests/Core/ParserTests.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +37,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.environmentSetup",
+    "settings.editor.selected.configurable": "RiderDotCoverContinuousTestingPageId",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -49,7 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1724934875254</updated>
       <workItem from="1724934876268" duration="15000" />
-      <workItem from="1724935036482" duration="2501000" />
+      <workItem from="1724935036482" duration="2683000" />
     </task>
     <servers />
   </component>

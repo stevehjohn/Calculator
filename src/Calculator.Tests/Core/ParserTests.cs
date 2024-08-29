@@ -12,7 +12,7 @@ public class ParserTests
     private void ParsesExpressionsCorrectly(string expression, string expected)
     {
         var result = _parser.Parse(expression);
-        
+
         Assert.Equal(expected, string.Join(' ', result));
     }
 }
