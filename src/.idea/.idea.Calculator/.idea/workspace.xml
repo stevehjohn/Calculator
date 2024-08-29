@@ -6,13 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="ba2b9180-b3df-4c7d-b12a-37a13f3798c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculator.Tests/Calculator.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator.Tests/Calculator.Tests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculator.Tests/Core/ParserTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator.Tests/Core/ParserTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/Core/Parser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/Core/Parser.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -30,6 +32,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "2bda7d68-2930-42f0-ac3f-680e380df75f.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
@@ -50,7 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1724934875254</updated>
       <workItem from="1724934876268" duration="15000" />
-      <workItem from="1724935036482" duration="2683000" />
+      <workItem from="1724935036482" duration="3156000" />
     </task>
     <servers />
   </component>
@@ -61,5 +64,24 @@
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Calculator/Core/Parser.cs</url>
+          <line>16</line>
+          <properties documentPath="$PROJECT_DIR$/Calculator/Core/Parser.cs" containingFunctionPresentation="Method 'Parse'">
+            <startOffsets>
+              <option value="312" />
+            </startOffsets>
+            <endOffsets>
+              <option value="350" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

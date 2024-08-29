@@ -22,12 +22,12 @@ public class Parser
 
                 continue;
             }
-
+            
             if (ProcessForNumbers())
             {
                 continue;
             }
-
+            
             if (ProcessForParentheses())
             {
                 continue;
@@ -83,6 +83,8 @@ public class Parser
             case '(':
                 _stack.Push(_expression[_position]);
 
+                _position++;
+                
                 return true;
 
             case ')':
@@ -96,6 +98,8 @@ public class Parser
                 {
                     _stack.Pop();
                 }
+
+                _position++;
 
                 return true;
             }
@@ -124,6 +128,8 @@ public class Parser
         }
 
         _stack.Push(_expression[_position]);
+
+        _position++;
     }
 
     private static int GetPrecedence(char symbol)
