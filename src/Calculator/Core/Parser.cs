@@ -10,6 +10,8 @@ public class Parser
 
     private string _expression;
 
+    private TokenType _previousTokenType;
+
     public Queue<Element> Parse(string expression)
     {
         Initialise(expression);
@@ -23,15 +25,21 @@ public class Parser
             
             if (ProcessForNumbers())
             {
+                _previousTokenType = TokenType.Number;
+                
                 continue;
             }
             
             if (ProcessForParentheses())
             {
+                _previousTokenType = TokenType.Parenthesis;
+                
                 continue;
             }
 
             ProcessForOperators();
+
+            _previousTokenType = TokenType.Operator;
         }
 
         while (_stack.Count > 0)
@@ -51,6 +59,8 @@ public class Parser
         _position = 0;
 
         _expression = expression;
+
+        _previousTokenType = TokenType.None;
     }
 
     private bool ProcessForWhitespace()
