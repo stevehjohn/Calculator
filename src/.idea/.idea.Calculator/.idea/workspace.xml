@@ -7,7 +7,7 @@
     <list default="true" id="ba2b9180-b3df-4c7d-b12a-37a13f3798c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculator.Tests/Core/ParserTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator.Tests/Core/ParserTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculator/Core/Parser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/Core/Parser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator.Tests/Exceptions/TestException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator.Tests/Exceptions/TestException.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,12 +54,43 @@
       <option name="presentableId" value="Default" />
       <updated>1724934875254</updated>
       <workItem from="1724934876268" duration="15000" />
-      <workItem from="1724935036482" duration="4961000" />
+      <workItem from="1724935036482" duration="5150000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnitTestsCoverage.Settings">
+    <option name="coveragePercentColumnWidth" value="150" />
+    <option name="sortOrder" value="DESCENDING" />
+    <option name="sortedColumn" value="1" />
+    <option name="symbolColumnWidth" value="98" />
+    <coverage-tree-state>
+      <expand>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 86% 21/151" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 86% 21/151" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator.Tests 96% 1/23" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 86% 21/151" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 84% 20/128" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 86% 21/151" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 84% 20/128" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 84% 20/128" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+      </expand>
+      <select />
+    </coverage-tree-state>
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">

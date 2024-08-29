@@ -1,5 +1,6 @@
 using System.Text;
 using Calculator.Core;
+using Calculator.Exceptions;
 using Calculator.Tests.Exceptions;
 using Xunit;
 
@@ -17,6 +18,12 @@ public class ParserTests
         var result = _parser.Parse(expression);
 
         Assert.Equal(expected, ConstructExpected(result));
+    }
+
+    [Fact]
+    public void ParserThrowsExceptionForUnknownOperator()
+    {
+        Assert.Throws<ParseException>(() => _parser.Parse("1 @ 2"));
     }
 
     private static string ConstructExpected(Queue<Element> queue)
