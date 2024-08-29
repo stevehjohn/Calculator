@@ -60,6 +60,13 @@ public class ParserTests
                 continue;
             }
 
+            if (item is Function)
+            {
+                expected.Append($"{item.ToString()} ");
+                
+                continue;
+            }
+
             expected.Append($"{item.Value} ");
         }
 
