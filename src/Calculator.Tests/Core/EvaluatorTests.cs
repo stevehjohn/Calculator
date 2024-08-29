@@ -27,6 +27,7 @@ public class EvaluatorTests
     [InlineData("5! + 1", 121)]
     [InlineData("5! - 1", 119)]
     [InlineData("2 + max(3, 1)", 5)]
+    [InlineData("sin(1)", 0.8414709848078965)]
     public void ProducesExpectedResult(string expression, double expected)
     {
         var result = _evaluator.Evaluate(expression);
