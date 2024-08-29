@@ -116,7 +116,7 @@ public class Parser
         {
             var top = _stack.Peek();
 
-            while (_stack.Count > 0 && top != '(' && GetPrecedence(top) >= precedence)
+            while (_stack.Count > 0 && top != '(' && (GetPrecedence(top) > precedence || (GetPrecedence(top) == precedence && _expression[_position] != '^')))
             {
                 _queue.Enqueue(Element.Create(_stack.Pop()));
 
