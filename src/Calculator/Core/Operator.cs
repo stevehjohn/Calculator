@@ -37,6 +37,8 @@ public class Operator : Element
         if (_operation == Operation.Factorial)
         {
             stack.Push(new Operand(Maths.Factorial((long) stack.Pop().Value)));
+            
+            return;
         }
 
         var right = stack.Pop().Value;
