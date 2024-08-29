@@ -10,6 +10,7 @@ public class EvaluatorTests
     [Theory]
     [InlineData("2 * 3", 6)]
     [InlineData("2.5 / .5", 5)]
+    [InlineData("5 * -3", -15)]
     public void ProducesExpectedResult(string expression, double expected)
     {
         var result = _evaluator.Evaluate(expression);
