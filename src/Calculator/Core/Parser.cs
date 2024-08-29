@@ -10,10 +10,12 @@ public class Parser
 
     private string _expression;
 
+    private bool _negative;
+
     public Queue<Element> Parse(string expression)
     {
         Initialise(expression);
-
+        
         while (_position < _expression.Length)
         {
             if (char.IsWhiteSpace(_expression[_position]))
@@ -41,7 +43,7 @@ public class Parser
             _queue.Enqueue(Element.Create(_stack.Pop()));
         }
 
-        return _queue;
+        return new Queue<Element>(_queue);
     }
 
     private void Initialise(string expression)
@@ -53,6 +55,8 @@ public class Parser
         _position = 0;
 
         _expression = expression;
+
+        _negative = false;
     }
 
     private bool ProcessForNumbers()
@@ -69,9 +73,16 @@ public class Parser
             _position++;
         }
 
-        var numberStr = _expression.Substring(start, _position - start);
+        var number = double.Parse(_expression.Substring(start, _position - start));
 
-        _queue.Enqueue(Element.Create(double.Parse(numberStr)));
+        if (_negative)
+        {
+            number = -number;
+
+            _negative = false;
+        }
+
+        _queue.Enqueue(Element.Create(number));
 
         return true;
     }
@@ -110,6 +121,15 @@ public class Parser
 
     private void ProcessForOperators()
     {
+        if (_expression[_position] == '-' && (_queue.Count == 0 || _queue.Last() is Operator))
+        {
+            _negative = true;
+            
+            _position++;
+            
+            return;
+        }
+
         var precedence = GetPrecedence(_expression[_position]);
 
         if (_stack.Count > 0)
