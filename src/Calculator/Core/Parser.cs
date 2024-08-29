@@ -10,8 +10,6 @@ public class Parser
 
     private string _expression;
 
-    private bool _negative;
-
     public Queue<Element> Parse(string expression)
     {
         Initialise(expression);
@@ -55,8 +53,6 @@ public class Parser
         _position = 0;
 
         _expression = expression;
-
-        _negative = false;
     }
 
     private bool ProcessForNumbers()
@@ -74,13 +70,6 @@ public class Parser
         }
 
         var number = double.Parse(_expression.Substring(start, _position - start));
-
-        if (_negative)
-        {
-            number = -number;
-
-            _negative = false;
-        }
 
         _queue.Enqueue(Element.Create(number));
 
@@ -121,15 +110,6 @@ public class Parser
 
     private void ProcessForOperators()
     {
-        if (_expression[_position] == '-' && (_queue.Count == 0 || _queue.Last() is Operator))
-        {
-            _negative = true;
-            
-            _position++;
-            
-            return;
-        }
-
         var precedence = GetPrecedence(_expression[_position]);
 
         if (_stack.Count > 0)
