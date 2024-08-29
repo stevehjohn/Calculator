@@ -36,9 +36,11 @@ public class Operator : Element
         stack.Push(new Operand(_operation switch
         {
             Operation.Add => left + right,
+            Operation.Divide => left / right,
+            Operation.Exponentiate => Math.Pow(left, right),
             Operation.Subtract => left - right,
             Operation.Multiply => left * right,
-            _ => left / right
+            _ => throw new ParseException($"Unable to perform {_operation}.")
         }));
     }
 

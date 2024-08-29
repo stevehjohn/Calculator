@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba2b9180-b3df-4c7d-b12a-37a13f3798c1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculator/Core/Operation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/Core/Operation.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculator/Core/Operator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/Core/Operator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calculator/Core/Parser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/Core/Parser.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,67 +68,67 @@
       <expand>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 95% 10/196" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 95% 9/198" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 95% 10/196" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 95% 9/198" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="Calculator.Tests 97% 1/32" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 95% 10/196" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 95% 9/198" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="Calculator.Tests 97% 1/32" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="Calculator.Tests.Core 97% 1/32" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 95% 10/196" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 95% 9/198" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="Calculator.Tests 97% 1/32" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="Calculator.Tests.Core 97% 1/32" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="ParserTests 96% 1/27" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 95% 10/196" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 95% 9/164" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 95% 9/198" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 95% 8/166" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 95% 10/196" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 95% 9/164" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 95% 9/164" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 95% 9/198" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 95% 8/166" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 95% 8/166" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 95% 10/196" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 95% 9/164" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 95% 9/164" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Core 94% 9/161" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 95% 9/198" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 95% 8/166" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 95% 8/166" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Core 95% 8/163" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 95% 10/196" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 95% 9/164" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 95% 9/164" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Core 94% 9/161" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 95% 9/198" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 95% 8/166" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 95% 8/166" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Core 95% 8/163" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="Element 86% 1/7" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 95% 10/196" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 95% 9/164" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 95% 9/164" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Core 94% 9/161" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 95% 9/198" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 95% 8/166" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 95% 8/166" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Core 95% 8/163" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="Element 86% 1/7" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="Value 0% 1/1" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 95% 10/196" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 95% 9/164" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 95% 9/164" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Core 94% 9/161" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 95% 9/198" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 95% 8/166" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 95% 8/166" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Core 95% 8/163" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="Operand 73% 3/11" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
       </expand>
@@ -142,24 +139,5 @@
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Calculator/Core/Parser.cs</url>
-          <line>18</line>
-          <properties documentPath="$PROJECT_DIR$/Calculator/Core/Parser.cs" containingFunctionPresentation="Method 'Parse'">
-            <startOffsets>
-              <option value="363" />
-            </startOffsets>
-            <endOffsets>
-              <option value="401" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
