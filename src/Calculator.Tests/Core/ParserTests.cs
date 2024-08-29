@@ -1,7 +1,8 @@
+#pragma warning disable CS8509
+
 using System.Text;
 using Calculator.Core;
 using Calculator.Exceptions;
-using Calculator.Tests.Exceptions;
 using Xunit;
 
 namespace Calculator.Tests.Core;
@@ -54,8 +55,7 @@ public class ParserTests
                     "Multiply" => "* ",
                     "Negate" => "-- ",
                     "RightShift" => ">> ",
-                    "Subtract" => "- ",
-                    _ => throw new TestException($"Unrecognised operation {operation}.")
+                    "Subtract" => "- "
                 });
                 
                 continue;
