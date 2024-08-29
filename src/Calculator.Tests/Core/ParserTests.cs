@@ -13,6 +13,7 @@ public class ParserTests
     [Theory]
     [InlineData("1 + 5 * (8 - 2)", "1 5 8 2 - * +")]
     [InlineData("3 + 4 * 2 / (1 - 5) ^ 2 ^ 3", "3 4 2 * 1 5 - 2 3 ^ ^ / +")]
+    [InlineData("2.5 * 2", "2.5 2 *")]
     public void ParsesExpressionsCorrectly(string expression, string expected)
     {
         var result = _parser.Parse(expression);

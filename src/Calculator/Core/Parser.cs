@@ -57,21 +57,21 @@ public class Parser
 
     private bool ProcessForNumbers()
     {
-        if (! char.IsDigit(_expression[_position]))
+        if (! (char.IsDigit(_expression[_position]) || _expression[_position] == '.'))
         {
             return false;
         }
 
         var start = _position;
 
-        while (_position < _expression.Length && char.IsDigit(_expression[_position]))
+        while (_position < _expression.Length && (char.IsDigit(_expression[_position]) || _expression[_position] == '.'))
         {
             _position++;
         }
 
         var numberStr = _expression.Substring(start, _position - start);
 
-        _queue.Enqueue(Element.Create(int.Parse(numberStr)));
+        _queue.Enqueue(Element.Create(double.Parse(numberStr)));
 
         return true;
     }
