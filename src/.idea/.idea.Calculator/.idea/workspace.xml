@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba2b9180-b3df-4c7d-b12a-37a13f3798c1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Calculator/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculator.Tests/Core/ParserTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator.Tests/Core/ParserTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/Core/Element.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/Core/Element.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Calculator/Core/Parser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/Core/Parser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calculator/Core/TokenType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator/Core/TokenType.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,65 +72,65 @@
       <expand>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 97% 6/234" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 97% 8/256" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 97% 6/234" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 97% 5/197" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 97% 8/256" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 97% 7/219" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 97% 6/234" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 97% 5/197" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 97% 5/197" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 97% 8/256" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 97% 7/219" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 97% 7/219" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 97% 6/234" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 97% 5/197" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 97% 5/197" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Core 97% 5/185" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 97% 8/256" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 97% 7/219" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 97% 7/219" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Core 97% 7/207" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 97% 6/234" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 97% 5/197" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 97% 5/197" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Core 97% 5/185" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Element 86% 1/7" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 97% 8/256" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 97% 7/219" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 97% 7/219" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Core 97% 7/207" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Element 90% 1/10" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 97% 6/234" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 97% 5/197" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 97% 5/197" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Core 97% 5/185" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Element 86% 1/7" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 97% 8/256" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 97% 7/219" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 97% 7/219" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Core 97% 7/207" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Element 90% 1/10" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="Value 0% 1/1" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 97% 6/234" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 97% 5/197" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Calculator 97% 5/197" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Core 97% 5/185" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 97% 8/256" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 97% 7/219" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Calculator 97% 7/219" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Core 97% 7/207" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="Operand 73% 3/11" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 97% 6/234" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 97% 8/256" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="Calculator.Tests 97% 1/37" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 97% 6/234" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 97% 8/256" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="Calculator.Tests 97% 1/37" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="Calculator.Tests.Core 97% 1/37" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 97% 6/234" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 97% 8/256" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="Calculator.Tests 97% 1/37" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="Calculator.Tests.Core 97% 1/37" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
           <item name="ParserTests 97% 1/32" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />

@@ -10,6 +10,11 @@ public abstract class Element
 
     public static Element Create(string symbol)
     {
+        if (char.IsLetter(symbol[0]))
+        {
+            return null;
+        }
+
         return new Operator(symbol);
     }
 

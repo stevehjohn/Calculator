@@ -20,7 +20,7 @@ public class Parser
         
         while (_position < _expression.Length)
         {
-            if (ProcessForWhitespace())
+            if (ProcessForIgnored())
             {
                 continue;
             }
@@ -31,7 +31,14 @@ public class Parser
                 
                 continue;
             }
-            
+
+            if (ProcessForFunctions())
+            {
+                _previousTokenType = TokenType.Function;
+                
+                continue;
+            }
+
             if (ProcessForParentheses())
             {
                 _previousTokenType = TokenType.Parenthesis;
@@ -67,9 +74,9 @@ public class Parser
         _previousSymbol = string.Empty;
     }
 
-    private bool ProcessForWhitespace()
+    private bool ProcessForIgnored()
     {
-        if (char.IsWhiteSpace(_expression[_position]))
+        if (char.IsWhiteSpace(_expression[_position]) || _expression[_position] == ',')
         {
             _position++;
 
@@ -96,6 +103,26 @@ public class Parser
         var number = double.Parse(_expression.Substring(start, _position - start));
 
         _queue.Enqueue(Element.Create(number));
+
+        return true;
+    }
+    private bool ProcessForFunctions()
+    {
+        if (! char.IsLetter(_expression[_position]))
+        {
+            return false;
+        }
+
+        var start = _position;
+
+        while (_position < _expression.Length && char.IsLetter(_expression[_position]))
+        {
+            _position++;
+        }
+
+        var function = _expression.Substring(start, _position - start);
+        
+        _stack.Push(function);
 
         return true;
     }
