@@ -6,16 +6,16 @@ public class Operator : Element
 {
     private readonly Operation _operation;
     
-    public Operator(char operation)
+    public Operator(string operation)
     {
         _operation = operation switch
         {
-            '+' => Operation.Add,
-            '/' => Operation.Divide,
-            '^' => Operation.Exponentiate,
-            '*' => Operation.Multiply,
-            '_' => Operation.Negate,
-            '-' => Operation.Subtract,
+            "+" => Operation.Add,
+            "/" => Operation.Divide,
+            "^" => Operation.Exponentiate,
+            "*" => Operation.Multiply,
+            "--" => Operation.Negate,
+            "-" => Operation.Subtract,
             _ => throw new ParseException($"Unknown operator type '{operation}'.")
         };
     }

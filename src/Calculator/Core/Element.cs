@@ -8,7 +8,7 @@ public abstract class Element
         
     public virtual double Value => throw new ParseException($"Incorrect call to .Value on Element type {GetType().Name}.");
 
-    public static Element Create(char symbol)
+    public static Element Create(string symbol)
     {
         return new Operator(symbol);
     }

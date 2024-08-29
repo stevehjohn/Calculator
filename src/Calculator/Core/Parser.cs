@@ -4,7 +4,7 @@ public class Parser
 {
     private readonly Queue<Element> _queue = new();
 
-    private readonly Stack<char> _stack = new();
+    private readonly Stack<string> _stack = new();
 
     private int _position;
 
@@ -101,7 +101,7 @@ public class Parser
         switch (_expression[_position])
         {
             case '(':
-                _stack.Push(_expression[_position]);
+                _stack.Push("(");
 
                 _position++;
                 
@@ -109,12 +109,12 @@ public class Parser
 
             case ')':
             {
-                while (_stack.Count > 0 && _stack.Peek() != '(')
+                while (_stack.Count > 0 && _stack.Peek() != "(")
                 {
                     _queue.Enqueue(Element.Create(_stack.Pop()));
                 }
 
-                if (_stack.Peek() == '(')
+                if (_stack.Peek() == "(")
                 {
                     _stack.Pop();
                 }
@@ -130,11 +130,11 @@ public class Parser
 
     private void ProcessForOperators()
     {
-        var symbol = _expression[_position];
+        var symbol = _expression[_position].ToString();
 
-        if (_previousTokenType != TokenType.Number && symbol == '-')
+        if (_previousTokenType != TokenType.Number && symbol == "-")
         {
-            symbol = '_';
+            symbol = "--";
         }
 
         var precedence = GetPrecedence(symbol);
@@ -143,7 +143,7 @@ public class Parser
         {
             var top = _stack.Peek();
 
-            while (_stack.Count > 0 && top != '(' && (GetPrecedence(top) > precedence || (GetPrecedence(top) == precedence && symbol != '^')))
+            while (_stack.Count > 0 && top != "(" && (GetPrecedence(top) > precedence || (GetPrecedence(top) == precedence && symbol != "^")))
             {
                 _queue.Enqueue(Element.Create(_stack.Pop()));
 
@@ -159,14 +159,14 @@ public class Parser
         _position++;
     }
 
-    private static int GetPrecedence(char symbol)
+    private static int GetPrecedence(string symbol)
     {
         return symbol switch
         {
-            '_' => 3,
-            '^' => 2,
-            '*' => 1,
-            '/' => 1,
+            "--" => 3,
+            "^" => 2,
+            "*" => 1,
+            "/" => 1,
             _ => 0
         };
     }

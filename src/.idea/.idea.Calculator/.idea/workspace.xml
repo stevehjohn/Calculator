@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba2b9180-b3df-4c7d-b12a-37a13f3798c1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Calculator.Tests/Core/EvaluatorTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Calculator.Tests/Core/EvaluatorTests.cs" afterDir="false" />
-    </list>
+    <list default="true" id="ba2b9180-b3df-4c7d-b12a-37a13f3798c1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
