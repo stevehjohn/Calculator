@@ -18,6 +18,10 @@ public class EvaluatorTests
     [InlineData("(1 + 2 + 3) * 4", 24)]
     [InlineData("1 << 2", 4)]
     [InlineData("8 >> 2", 2)]
+    [InlineData("5 % 3", 2)]
+    [InlineData("6 % 3", 0)]
+    [InlineData("5 % 2.5", 0)]
+    [InlineData("6 % 2.5", 1)]
     public void ProducesExpectedResult(string expression, double expected)
     {
         var result = _evaluator.Evaluate(expression);

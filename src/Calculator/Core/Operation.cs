@@ -6,6 +6,7 @@ public enum Operation
     Divide,
     Exponentiate,
     LeftShift,
+    Modulus,
     Multiply,
     Negate,
     RightShift,
