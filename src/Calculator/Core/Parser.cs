@@ -36,6 +36,11 @@ public class Parser
             ProcessForOperators();
         }
 
+        while (_stack.Count > 0)
+        {
+            _queue.Enqueue(Element.Create(_stack.Pop()));
+        }
+
         return _queue;
     }
 
