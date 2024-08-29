@@ -17,6 +17,7 @@ public class ParserTests
     [InlineData("1 << 1 + 2", "1 1 2 + <<")]
     [InlineData("1 >> 1 + 2", "1 1 2 + >>")]
     [InlineData("2 + -1", "2 1 -- +")]
+    [InlineData("2 + 5 % 2", "2 5 2 % +")]
     public void ParsesExpressionsCorrectly(string expression, string expected)
     {
         var result = _parser.Parse(expression);
