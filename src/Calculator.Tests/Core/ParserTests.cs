@@ -18,6 +18,7 @@ public class ParserTests
     [InlineData("1 >> 1 + 2", "1 1 2 + >>")]
     [InlineData("2 + -1", "2 1 -- +")]
     [InlineData("2 + 5 % 2", "2 5 2 % +")]
+    [InlineData("5! + 1", "5 ! 1 +")]
     public void ParsesExpressionsCorrectly(string expression, string expected)
     {
         var result = _parser.Parse(expression);
@@ -44,6 +45,7 @@ public class ParserTests
                     "Add" => "+ ",
                     "Divide" => "/ ",
                     "Exponentiate" => "^ ",
+                    "Factorial" => "! ",
                     "LeftShift" => "<< ",
                     "Modulus" => "% ",
                     "Multiply" => "* ",

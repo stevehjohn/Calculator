@@ -5,6 +5,7 @@ public enum Operation
     Add,
     Divide,
     Exponentiate,
+    Factorial,
     LeftShift,
     Modulus,
     Multiply,

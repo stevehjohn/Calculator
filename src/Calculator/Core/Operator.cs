@@ -1,4 +1,5 @@
 using Calculator.Exceptions;
+using Calculator.Libraries;
 
 namespace Calculator.Core;
 
@@ -13,6 +14,7 @@ public class Operator : Element
             "+" => Operation.Add,
             "/" => Operation.Divide,
             "^" => Operation.Exponentiate,
+            "!" => Operation.Factorial,
             "<<" => Operation.LeftShift,
             "%" => Operation.Modulus,
             "*" => Operation.Multiply,
@@ -30,6 +32,11 @@ public class Operator : Element
             stack.Push(new Operand(-stack.Pop().Value));
             
             return;
+        }
+
+        if (_operation == Operation.Factorial)
+        {
+            stack.Push(new Operand(Maths.Factorial((long) stack.Pop().Value)));
         }
 
         var right = stack.Pop().Value;

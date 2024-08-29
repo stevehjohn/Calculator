@@ -170,6 +170,7 @@ public class Parser
     {
         return symbol switch
         {
+            "!" => 4,
             "--" => 4,
             "^" => 3,
             "*" => 2,
