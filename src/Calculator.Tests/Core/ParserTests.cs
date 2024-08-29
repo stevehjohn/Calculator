@@ -16,6 +16,7 @@ public class ParserTests
     [InlineData("2.5 * 2", "2.5 2 *")]
     [InlineData("1 << 1 + 2", "1 1 2 + <<")]
     [InlineData("1 >> 1 + 2", "1 1 2 + >>")]
+    [InlineData("2 + -1", "2 1 -- +")]
     public void ParsesExpressionsCorrectly(string expression, string expected)
     {
         var result = _parser.Parse(expression);
@@ -43,7 +44,9 @@ public class ParserTests
                     "Divide" => "/ ",
                     "Exponentiate" => "^ ",
                     "LeftShift" => "<< ",
+                    "Modulus" => "% ",
                     "Multiply" => "* ",
+                    "Negate" => "-- ",
                     "RightShift" => ">> ",
                     "Subtract" => "- ",
                     _ => throw new TestException($"Unrecognised operation {operation}.")
