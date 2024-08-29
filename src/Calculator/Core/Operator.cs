@@ -14,6 +14,7 @@ public class Operator : Element
             '/' => Operation.Divide,
             '^' => Operation.Exponentiate,
             '*' => Operation.Multiply,
+            '_' => Operation.Negate,
             '-' => Operation.Subtract,
             _ => throw new ParseException($"Unknown operator type '{operation}'.")
         };
@@ -21,6 +22,13 @@ public class Operator : Element
 
     public override void Process(Stack<Element> stack)
     {
+        if (_operation == Operation.Negate)
+        {
+            stack.Push(new Operand(-stack.Pop().Value));
+            
+            return;
+        }
+
         var right = stack.Pop().Value;
 
         var left = stack.Pop().Value;

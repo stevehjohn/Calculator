@@ -130,13 +130,20 @@ public class Parser
 
     private void ProcessForOperators()
     {
-        var precedence = GetPrecedence(_expression[_position]);
+        var symbol = _expression[_position];
+
+        if (_previousTokenType != TokenType.Number && symbol == '-')
+        {
+            symbol = '_';
+        }
+
+        var precedence = GetPrecedence(symbol);
 
         if (_stack.Count > 0)
         {
             var top = _stack.Peek();
 
-            while (_stack.Count > 0 && top != '(' && (GetPrecedence(top) > precedence || (GetPrecedence(top) == precedence && _expression[_position] != '^')))
+            while (_stack.Count > 0 && top != '(' && (GetPrecedence(top) > precedence || (GetPrecedence(top) == precedence && symbol != '^')))
             {
                 _queue.Enqueue(Element.Create(_stack.Pop()));
 
@@ -147,7 +154,7 @@ public class Parser
             }
         }
 
-        _stack.Push(_expression[_position]);
+        _stack.Push(symbol);
 
         _position++;
     }
@@ -156,6 +163,7 @@ public class Parser
     {
         return symbol switch
         {
+            '_' => 3,
             '^' => 2,
             '*' => 1,
             '/' => 1,

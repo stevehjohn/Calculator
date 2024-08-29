@@ -6,5 +6,6 @@ public enum Operation
     Divide,
     Exponentiate,
     Multiply,
+    Negate,
     Subtract
 }
