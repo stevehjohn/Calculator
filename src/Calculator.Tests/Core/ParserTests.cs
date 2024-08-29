@@ -33,7 +33,7 @@ public class ParserTests
         
         while (queue.TryDequeue(out Element item))
         {
-            if (item is BinaryOperator operation)
+            if (item is Operator operation)
             {
                 expected.Append(operation.ToString() switch
                 {

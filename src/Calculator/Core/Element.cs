@@ -10,7 +10,7 @@ public abstract class Element
 
     public static Element Create(char symbol)
     {
-        return new BinaryOperator(symbol);
+        return new Operator(symbol);
     }
 
     public static Element Create(double value)

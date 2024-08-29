@@ -2,11 +2,11 @@ using Calculator.Exceptions;
 
 namespace Calculator.Core;
 
-public class BinaryOperator : Element
+public class Operator : Element
 {
     private readonly Operation _operation;
     
-    public BinaryOperator(char operation)
+    public Operator(char operation)
     {
         _operation = operation switch
         {
