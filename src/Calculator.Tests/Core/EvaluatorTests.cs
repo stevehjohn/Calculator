@@ -13,6 +13,8 @@ public class EvaluatorTests
     [InlineData("5 * -3", -15)]
     [InlineData("4 ^ 2", 16)]
     [InlineData("4 ^ -2", 0.0625)]
+    [InlineData("(5 + 1) * (8 - 2)", 36)]
+    [InlineData("5 + 1 * (8 - 2)", 11)]
     public void ProducesExpectedResult(string expression, double expected)
     {
         var result = _evaluator.Evaluate(expression);
