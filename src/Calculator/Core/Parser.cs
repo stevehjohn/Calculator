@@ -16,10 +16,8 @@ public class Parser
         
         while (_position < _expression.Length)
         {
-            if (char.IsWhiteSpace(_expression[_position]))
+            if (ProcessForWhitespace())
             {
-                _position++;
-
                 continue;
             }
             
@@ -53,6 +51,18 @@ public class Parser
         _position = 0;
 
         _expression = expression;
+    }
+
+    private bool ProcessForWhitespace()
+    {
+        if (char.IsWhiteSpace(_expression[_position]))
+        {
+            _position++;
+
+            return true;
+        }
+
+        return false;
     }
 
     private bool ProcessForNumbers()
