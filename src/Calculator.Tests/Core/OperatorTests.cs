@@ -13,4 +13,10 @@ public class OperatorTests
 
         Assert.Throws<ParseException>(() => element.Value);
     }
+
+    [Fact]
+    public void OperatorThrowsExceptionWhenPassedInvalidSymbol()
+    {
+        Assert.Throws<ParseException>(() => new Operator("@"));
+    }
 }
