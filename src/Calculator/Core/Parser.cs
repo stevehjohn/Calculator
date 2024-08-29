@@ -131,10 +131,17 @@ public class Parser
     private void ProcessForOperators()
     {
         var symbol = _expression[_position].ToString();
-
+        
         if (_previousTokenType != TokenType.Number && symbol == "-")
         {
             symbol = "--";
+        }
+
+        if (symbol == "<" || symbol == ">")
+        {
+            _position++;
+            
+            symbol = $"{symbol}{_expression[_position]}";
         }
 
         var precedence = GetPrecedence(symbol);
