@@ -20,6 +20,7 @@ public class ParserTests
     [InlineData("2 + 5 % 2", "2 5 2 % +")]
     [InlineData("5! + 1", "5 ! 1 +")]
     [InlineData("5! - 1", "5 ! 1 -")]
+    [InlineData("π + 1", "3.141592653589793 1 +")]
     public void ParsesExpressionsCorrectly(string expression, string expected)
     {
         var result = _parser.Parse(expression);
