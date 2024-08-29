@@ -1,3 +1,5 @@
+using Calculator.Exceptions;
+
 namespace Calculator.Core;
 
 public class Function : Element
@@ -11,7 +13,16 @@ public class Function : Element
     
     public override void Process(Stack<Element> stack)
     {
-        throw new NotImplementedException();
+        switch (_function)
+        {
+            case "max":
+                stack.Push(new Operand(Math.Max(stack.Pop().Value, stack.Pop().Value)));
+                
+                break;
+            
+            default:
+                throw new ParseException($"Unknown function {_function}.");
+        }
     }
 
     public override string ToString()
