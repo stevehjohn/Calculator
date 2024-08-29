@@ -1,3 +1,5 @@
+#pragma warning disable CS8509
+
 using Calculator.Exceptions;
 using Calculator.Libraries;
 
@@ -54,8 +56,7 @@ public class Operator : Element
             Operation.Modulus => left % right,
             Operation.Multiply => left * right,
             Operation.RightShift => (long) left >> (int) right,
-            Operation.Subtract => left - right,
-            _ => throw new ParseException($"Unable to perform {_operation}.")
+            Operation.Subtract => left - right
         }));
     }
 
