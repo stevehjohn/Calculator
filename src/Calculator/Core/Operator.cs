@@ -12,6 +12,7 @@ public class Operator : Element
         {
             '+' => Operation.Add,
             '/' => Operation.Divide,
+            '^' => Operation.Exponentiate,
             '*' => Operation.Multiply,
             '-' => Operation.Subtract,
             _ => throw new ParseException($"Unknown operator type '{operation}'.")

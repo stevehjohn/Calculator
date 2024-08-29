@@ -136,6 +136,7 @@ public class Parser
     {
         return symbol switch
         {
+            '^' => 2,
             '*' => 1,
             '/' => 1,
             _ => 0

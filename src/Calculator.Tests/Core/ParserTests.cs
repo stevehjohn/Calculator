@@ -11,6 +11,7 @@ public class ParserTests
 
     [Theory]
     [InlineData("1 + 5 * (8 - 2)", "1 5 8 2 - * +")]
+    [InlineData("3 + 4 * 2 / (1 - 5) ^ 2 ^ 3", "3 4 2 * 1 5 * 2 3 ^ ^ / +")]
     public void ParsesExpressionsCorrectly(string expression, string expected)
     {
         var result = _parser.Parse(expression);
@@ -30,6 +31,7 @@ public class ParserTests
                 {
                     "Add" => "+ ",
                     "Divide" => "/ ",
+                    "Exponentiate" => "^ ",
                     "Multiply" => "* ",
                     "Subtract" => "- ",
                     _ => throw new TestException($"Unrecognised operation {operation}.")
@@ -41,6 +43,6 @@ public class ParserTests
             expected.Append($"{item.Value} ");
         }
 
-        return expected.ToString();
+        return expected.ToString().Trim();
     }
 }
