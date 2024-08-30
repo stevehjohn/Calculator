@@ -1,3 +1,4 @@
+using System.Globalization;
 using Calculator.Extensions;
 
 namespace Calculator.Infrastructure;
@@ -29,13 +30,13 @@ public class EvaluationLogger
     }
     
 
-    public void StepComplete(string operation)
+    public void StepComplete(string operation, double result)
     {
-        var expression = _expression.ReplaceLastOccurrence($"({operation})", string.Empty);
+        var expression = _expression.ReplaceLastOccurrence($"({operation})", result.ToString(CultureInfo.InvariantCulture));
 
         if (expression == _expression)
         {
-            expression = _expression.ReplaceLastOccurrence(operation, string.Empty);
+            expression = _expression.ReplaceLastOccurrence(operation, result.ToString(CultureInfo.InvariantCulture));
         }
 
         _expression = expression;

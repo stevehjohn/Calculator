@@ -42,7 +42,7 @@ public class Operator : Element
                 
                 stack.Push(new Operand(Maths.Factorial((long) value)));
                 
-                logger?.StepComplete($"{value}");
+                logger?.StepComplete($"{value}", stack.Peek().Value);
             
                 return;
         }
@@ -73,7 +73,7 @@ public class Operator : Element
             Operation.Multiply => $"{left} * {right}",
             Operation.RightShift => $"{(long) left} >> {(long) right}",
             Operation.Subtract => $"{left} - {right}"
-        });
+        }, stack.Peek().Value);
     }
 
     public override string ToString()
