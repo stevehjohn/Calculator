@@ -1,6 +1,7 @@
 #pragma warning disable CS8509
 
 using Calculator.Exceptions;
+using Calculator.Infrastructure;
 using Calculator.Libraries;
 
 namespace Calculator.Core;
@@ -8,8 +9,10 @@ namespace Calculator.Core;
 public class Operator : Element
 {
     private readonly Operation _operation;
+
+    private EvaluationLogger _logger;
     
-    public Operator(string operation)
+    public Operator(string operation, EvaluationLogger logger = null)
     {
         _operation = operation switch
         {
@@ -25,6 +28,8 @@ public class Operator : Element
             "-" => Operation.Subtract,
             _ => throw new ParseException($"Unknown operator type '{operation}'.")
         };
+
+        _logger = logger;
     }
 
     public override void Process(Stack<Element> stack)
@@ -57,6 +62,18 @@ public class Operator : Element
             Operation.RightShift => (long) left >> (int) right,
             Operation.Subtract => left - right
         }));
+
+        _logger?.StepComplete(_operation switch
+        {
+            Operation.Add => $"{left} + {right}",
+            Operation.Divide => $"{left} / {right}",
+            Operation.Exponentiate => $"{left} ^ {right}",
+            Operation.LeftShift => $"{(long) left} << {(long) right}",
+            Operation.Modulus => $"{left} % {right}",
+            Operation.Multiply => $"{left} * {right}",
+            Operation.RightShift => $"{(long) left} >> {(long) right}",
+            Operation.Subtract => $"{left} - {right}"
+        });
     }
 
     public override string ToString()
