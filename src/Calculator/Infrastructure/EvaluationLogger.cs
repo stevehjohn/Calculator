@@ -1,3 +1,5 @@
+using Calculator.Extensions;
+
 namespace Calculator.Infrastructure;
 
 public class EvaluationLogger
@@ -29,5 +31,15 @@ public class EvaluationLogger
 
     public void StepComplete(string operation)
     {
+        var expression = _expression.ReplaceLastOccurrence($"({operation})", string.Empty);
+
+        if (expression == _expression)
+        {
+            expression = _expression.ReplaceLastOccurrence(operation, string.Empty);
+        }
+
+        _expression = expression;
+        
+        _output.WriteLine(_expression);
     }
 }
