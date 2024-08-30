@@ -11,11 +11,6 @@ public class Evaluator
         var queue = _parser.Parse(expression);
         
         _stack.Clear();
-
-        foreach (var item in _stack)
-        {
-            Console.WriteLine(item);
-        }
         
         foreach (var element in queue)
         {
