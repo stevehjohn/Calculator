@@ -183,7 +183,7 @@ public class Parser
             symbol = "--";
         }
 
-        if (symbol == "<" || symbol == ">")
+        if (symbol is "<" or ">")
         {
             _position++;
             

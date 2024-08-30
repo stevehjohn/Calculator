@@ -29,6 +29,7 @@ public class Operator : Element
 
     public override void Process(Stack<Element> stack)
     {
+        // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
         switch (_operation)
         {
             case Operation.Negate:
