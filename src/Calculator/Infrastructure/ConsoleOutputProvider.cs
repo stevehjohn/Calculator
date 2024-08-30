@@ -1,6 +1,6 @@
 namespace Calculator.Infrastructure;
 
-public class ConsoleOutputProvider
+public class ConsoleOutputProvider : IOutputProvider
 {
     public void WriteLine(string line)
     {

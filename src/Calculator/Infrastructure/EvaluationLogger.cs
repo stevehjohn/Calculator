@@ -7,9 +7,9 @@ public class EvaluationLogger
 {
     private string _expression;
 
-    private readonly ConsoleOutputProvider _output;
+    private readonly IOutputProvider _output;
 
-    public EvaluationLogger(ConsoleOutputProvider output)
+    public EvaluationLogger(IOutputProvider output)
     {
         _output = output;
     }

@@ -1,5 +1,6 @@
 using Calculator.Core;
 using Calculator.Infrastructure;
+using Calculator.Tests.Infrastructure;
 using Xunit;
 
 namespace Calculator.Tests.Core;
@@ -38,18 +39,22 @@ public class EvaluatorTests
     }
     
     [Theory]
-    [InlineData("(5 + 1) * (8 - 2)")]
-    [InlineData("5 + 1 * (8 - 2)")]
-    [InlineData("(1 + 2 + 3) * 4")]
-    public void OutputsOperationsWhenProvidedWithLogger(string expression)
+    [InlineData("(5 + 1) * (8 - 2)", "(5 + 1) * (8 - 2)|6 * (8 - 2)|6 * 6|36")]
+    [InlineData("5 + 1 * (8 - 2)", "5 + 1 * (8 - 2)|5 + 1 * 6|5 + 6|11")]
+    [InlineData("(1 + 2 + 3) * 4", "(1 + 2 + 3) * 4|(3 + 3) * 4|6 * 4|24")]
+    public void OutputsOperationsWhenProvidedWithLogger(string expression, string expected)
     {
-        Console.WriteLine();
+        var parts = expected.Split('|');
+
+        var outputProvider = new TestOutputProvider();
         
-        var evaluator = new Evaluator(new EvaluationLogger(new ConsoleOutputProvider()));
+        var evaluator = new Evaluator(new EvaluationLogger(outputProvider));
         
         evaluator.Evaluate(expression);
-        
-        Console.WriteLine();
-        // TODO
+
+        for (var i = 0; i < parts.Length; i++)
+        {
+            Assert.Equal(parts[i], outputProvider.Output[i]);
+        }
     }
 }
