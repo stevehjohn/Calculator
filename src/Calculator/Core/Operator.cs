@@ -42,7 +42,11 @@ public class Operator : Element
             
                 return;
             case Operation.Factorial:
-                stack.Push(new Operand(Maths.Factorial((long) stack.Pop().Value)));
+                var value = stack.Pop().Value;
+                
+                stack.Push(new Operand(Maths.Factorial((long) value)));
+                
+                _logger.StepComplete($"{value}");
             
                 return;
         }
