@@ -1,12 +1,11 @@
 using Calculator.Core;
+using Calculator.Infrastructure;
 using Xunit;
 
 namespace Calculator.Tests.Core;
 
 public class EvaluatorTests
 {
-    private readonly Evaluator _evaluator = new();
-    
     [Theory]
     [InlineData("2 * 3", 6)]
     [InlineData("2.5 / .5", 5)]
@@ -31,8 +30,26 @@ public class EvaluatorTests
     [InlineData("π + 1", 4.141592653589793)]
     public void ProducesExpectedResult(string expression, double expected)
     {
-        var result = _evaluator.Evaluate(expression);
+        var evaluator = new Evaluator();
+        
+        var result = evaluator.Evaluate(expression);
         
         Assert.Equal(expected, result);
+    }
+    
+    [Theory]
+    [InlineData("(5 + 1) * (8 - 2)")]
+    [InlineData("5 + 1 * (8 - 2)")]
+    [InlineData("(1 + 2 + 3) * 4")]
+    public void OutputsOperationsWhenProvidedWithLogger(string expression)
+    {
+        Console.WriteLine();
+        
+        var evaluator = new Evaluator(new EvaluationLogger(new ConsoleOutputProvider()));
+        
+        evaluator.Evaluate(expression);
+        
+        Console.WriteLine();
+        // TODO
     }
 }
