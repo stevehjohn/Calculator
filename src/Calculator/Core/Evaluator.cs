@@ -1,3 +1,5 @@
+using Calculator.Infrastructure;
+
 namespace Calculator.Core;
 
 public class Evaluator
@@ -5,6 +7,8 @@ public class Evaluator
     private readonly Parser _parser = new();
 
     private readonly Stack<Element> _stack = new();
+
+    private readonly EvaluationLogger _logger;
     
     public double Evaluate(string expression)
     {

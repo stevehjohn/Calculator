@@ -9,10 +9,8 @@ namespace Calculator.Core;
 public class Operator : Element
 {
     private readonly Operation _operation;
-
-    private EvaluationLogger _logger;
     
-    public Operator(string operation, EvaluationLogger logger = null)
+    public Operator(string operation)
     {
         _operation = operation switch
         {
@@ -28,11 +26,9 @@ public class Operator : Element
             "-" => Operation.Subtract,
             _ => throw new ParseException($"Unknown operator type '{operation}'.")
         };
-
-        _logger = logger;
     }
 
-    public override void Process(Stack<Element> stack)
+    public override void Process(Stack<Element> stack, EvaluationLogger logger = null)
     {
         // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
         switch (_operation)
@@ -46,7 +42,7 @@ public class Operator : Element
                 
                 stack.Push(new Operand(Maths.Factorial((long) value)));
                 
-                _logger.StepComplete($"{value}");
+                logger.StepComplete($"{value}");
             
                 return;
         }
@@ -67,7 +63,7 @@ public class Operator : Element
             Operation.Subtract => left - right
         }));
 
-        _logger?.StepComplete(_operation switch
+        logger?.StepComplete(_operation switch
         {
             Operation.Add => $"{left} + {right}",
             Operation.Divide => $"{left} / {right}",

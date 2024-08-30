@@ -1,4 +1,5 @@
 using Calculator.Exceptions;
+using Calculator.Infrastructure;
 
 namespace Calculator.Core;
 
@@ -11,7 +12,7 @@ public class Function : Element
         _function = function.ToLower();
     }
 
-    public override void Process(Stack<Element> stack)
+    public override void Process(Stack<Element> stack, EvaluationLogger logger = null)
     {
         switch (_function)
         {

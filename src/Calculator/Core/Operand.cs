@@ -1,4 +1,5 @@
 using System.Globalization;
+using Calculator.Infrastructure;
 
 namespace Calculator.Core;
 
@@ -11,7 +12,7 @@ public class Operand : Element
         Value = value;
     }
 
-    public override void Process(Stack<Element> stack)
+    public override void Process(Stack<Element> stack, EvaluationLogger logger = null)
     {
         stack.Push(this);
     }
