@@ -21,7 +21,7 @@ public class Evaluator
     
     public double Evaluate(string expression)
     {
-        _logger.SetExpression(expression);
+        _logger?.SetExpression(expression);
         
         var queue = _parser.Parse(expression);
         

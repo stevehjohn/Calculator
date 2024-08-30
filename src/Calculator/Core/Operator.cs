@@ -42,7 +42,7 @@ public class Operator : Element
                 
                 stack.Push(new Operand(Maths.Factorial((long) value)));
                 
-                logger.StepComplete($"{value}");
+                logger?.StepComplete($"{value}");
             
                 return;
         }
