@@ -1,4 +1,5 @@
 using Calculator.Exceptions;
+using Calculator.Infrastructure;
 
 namespace Calculator.Core;
 
@@ -11,17 +12,27 @@ public class Function : Element
         _function = function.ToLower();
     }
 
-    public override void Process(Stack<Element> stack)
+    public override void Process(Stack<Element> stack, EvaluationLogger logger = null)
     {
         switch (_function)
         {
             case "max":
-                stack.Push(new Operand(Math.Max(stack.Pop().Value, stack.Pop().Value)));
+                var left = stack.Pop().Value;
+                
+                var right = stack.Pop().Value;
+                
+                stack.Push(new Operand(Math.Max(left, right)));
 
+                logger?.StepComplete($"max({right}, {left})", stack.Peek().Value);
+                
                 break;
 
             case "sin":
-                stack.Push(new Operand(Math.Sin(stack.Pop().Value)));
+                var value = stack.Pop().Value;
+
+                stack.Push(new Operand(Math.Sin(value)));
+
+                logger?.StepComplete($"sin({value})", stack.Peek().Value);
 
                 break;
 
