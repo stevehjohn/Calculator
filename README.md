@@ -4,7 +4,9 @@ A project implementing a calculator able to parse complex mathematical expressio
 
 Can optionally log the solve steps, e.g.
 
-- (5 + 1) * (8 - 2)
-- 6 * (8 - 2)
-- 6 * 6
-- 36
+```
+(5 + 1) * (8 - 2)
+6 * (8 - 2)
+6 * 6
+36
+```
