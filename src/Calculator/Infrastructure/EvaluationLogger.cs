@@ -18,10 +18,20 @@ public class EvaluationLogger
     {
         expression = expression.ToLower();
 
-        // ReSharper disable once StringIndexOfIsCultureSpecific.1
+        // ReSharper disable StringIndexOfIsCultureSpecific.1
         while (expression.IndexOf("  ") > -1)
         {
             expression = expression.Replace("  ", " ");
+        }
+
+        while (expression.IndexOf("( ") > -1)
+        {
+            expression = expression.Replace("( ", "(");
+        }
+
+        while (expression.IndexOf(" )") > -1)
+        {
+            expression = expression.Replace(" )", ")");
         }
 
         _expression = expression;
