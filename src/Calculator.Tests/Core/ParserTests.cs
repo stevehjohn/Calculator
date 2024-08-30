@@ -40,35 +40,35 @@ public class ParserTests
     {
         var expected = new StringBuilder();
         
-        while (queue.TryDequeue(out Element item))
+        while (queue.TryDequeue(out var item))
         {
-            if (item is Operator operation)
+            switch (item)
             {
-                expected.Append(operation.ToString() switch
-                {
-                    "Add" => "+ ",
-                    "Divide" => "/ ",
-                    "Exponentiate" => "^ ",
-                    "Factorial" => "! ",
-                    "LeftShift" => "<< ",
-                    "Modulus" => "% ",
-                    "Multiply" => "* ",
-                    "Negate" => "-- ",
-                    "RightShift" => ">> ",
-                    "Subtract" => "- "
-                });
+                case Operator operation:
+                    expected.Append(operation.ToString() switch
+                    {
+                        "Add" => "+ ",
+                        "Divide" => "/ ",
+                        "Exponentiate" => "^ ",
+                        "Factorial" => "! ",
+                        "LeftShift" => "<< ",
+                        "Modulus" => "% ",
+                        "Multiply" => "* ",
+                        "Negate" => "-- ",
+                        "RightShift" => ">> ",
+                        "Subtract" => "- "
+                    });
                 
-                continue;
-            }
-
-            if (item is Function)
-            {
-                expected.Append($"{item.ToString()} ");
+                    continue;
+                case Function:
+                    expected.Append($"{item.ToString()} ");
                 
-                continue;
+                    continue;
+                default:
+                    expected.Append($"{item.Value} ");
+                    
+                    break;
             }
-
-            expected.Append($"{item.Value} ");
         }
 
         return expected.ToString().Trim();
