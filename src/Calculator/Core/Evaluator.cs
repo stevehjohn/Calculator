@@ -29,7 +29,7 @@ public class Evaluator
         
         foreach (var element in queue)
         {
-            element.Process(_stack);
+            element.Process(_stack, _logger);
         }
 
         var result = _stack.Pop().Value;
