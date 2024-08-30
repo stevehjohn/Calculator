@@ -8,6 +8,7 @@ public class EvaluationLoggerTests
     private readonly Evaluator _evaluator = new(true);
     
     [Theory]
+    [InlineData("(5 + 1) * (8 - 2)", "(5 + 1) * 6|6 * 6|36")]
     public void OutputsCorrectSteps(string expression, string expected)
     {
         var expectedSteps = expected.Split('|');
