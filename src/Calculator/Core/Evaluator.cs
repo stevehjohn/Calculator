@@ -9,9 +9,20 @@ public class Evaluator
     private readonly Stack<Element> _stack = new();
 
     private readonly EvaluationLogger _logger;
+
+    public Evaluator()
+    {
+    }
+    
+    public Evaluator(EvaluationLogger logger)
+    {
+        _logger = logger;
+    }
     
     public double Evaluate(string expression)
     {
+        _logger.SetExpression(expression);
+        
         var queue = _parser.Parse(expression);
         
         _stack.Clear();
