@@ -4,7 +4,7 @@ namespace Calculator.Tests.Infrastructure;
 
 public class TestOutputProvider : IOutputProvider
 {
-    private readonly List<string> _output = new();
+    private readonly List<string> _output = [];
 
     public IReadOnlyList<string> Output => _output;
     
