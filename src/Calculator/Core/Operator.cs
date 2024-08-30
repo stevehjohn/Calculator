@@ -29,18 +29,16 @@ public class Operator : Element
 
     public override void Process(Stack<Element> stack)
     {
-        if (_operation == Operation.Negate)
+        switch (_operation)
         {
-            stack.Push(new Operand(-stack.Pop().Value));
+            case Operation.Negate:
+                stack.Push(new Operand(-stack.Pop().Value));
             
-            return;
-        }
-
-        if (_operation == Operation.Factorial)
-        {
-            stack.Push(new Operand(Maths.Factorial((long) stack.Pop().Value)));
+                return;
+            case Operation.Factorial:
+                stack.Push(new Operand(Maths.Factorial((long) stack.Pop().Value)));
             
-            return;
+                return;
         }
 
         var right = stack.Pop().Value;
