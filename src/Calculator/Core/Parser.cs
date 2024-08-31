@@ -198,7 +198,7 @@ public class Parser
         {
             var top = _stack.Peek();
 
-            while (_stack.Count > 0 && top != "(" && (GetPrecedence(top) > precedence || (GetPrecedence(top) == precedence && symbol != "^")))
+            while (_stack.Count > 0 && top != "(" && (GetPrecedence(top) > precedence || (GetPrecedence(top) == precedence && IsLeftAssociative(symbol))))
             {
                 _queue.Enqueue(Element.Create(_stack.Pop()));
 
@@ -212,6 +212,11 @@ public class Parser
         _stack.Push(symbol);
 
         _position++;
+    }
+
+    private bool IsLeftAssociative(string symbol)
+    {
+        return symbol != "^";
     }
 
     private static int GetPrecedence(string symbol)
