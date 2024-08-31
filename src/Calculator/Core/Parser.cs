@@ -214,7 +214,7 @@ public class Parser
         _position++;
     }
 
-    private bool IsLeftAssociative(string symbol)
+    private static bool IsLeftAssociative(string symbol)
     {
         return symbol != "^";
     }
