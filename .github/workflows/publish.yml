@@ -17,6 +17,8 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 7.0.x
+    - name: Copy README.md
+      run: cp README.md src/Calculator
     - name: Restore dependencies
       run: dotnet restore src/Calculator.sln
     - name: Build
