@@ -1,0 +1,27 @@
+name: .NET Build and Publish NuGet
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore dependencies
+      run: dotnet restore src/Security.sln
+    - name: Build
+      run: dotnet build --no-restore src/Calculator.sln --configuration Release
+    - name: Test
+      run: dotnet test --no-build --verbosity normal src/Calculator.sln --configuration Release
+    - name: Publish the package to NuGet
+      run: dotnet nuget push src/Calculator/bin/Release/*.nupkg -k ${{secrets.NUGET_KEY}} -s https://api.nuget.org/v3/index.json --skip-duplicate
