@@ -37,6 +37,7 @@ public class Operator : Element
                 stack.Push(new Operand(-stack.Pop().Value));
             
                 return;
+            
             case Operation.Factorial:
                 var value = stack.Pop().Value;
                 
