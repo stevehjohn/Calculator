@@ -27,4 +27,20 @@ public class FunctionTests
         
         Assert.Equal(4, stack.Pop().Value);
     }
+
+    [Fact]
+    public void MaxReturnsMaximum()
+    {
+        var function = Element.Create("max");
+
+        var stack = new Stack<Element>();
+        
+        stack.Push(Element.Create(16));
+        
+        stack.Push(Element.Create(20));
+        
+        function.Process(stack);
+        
+        Assert.Equal(20, stack.Pop().Value);
+    }
 }
