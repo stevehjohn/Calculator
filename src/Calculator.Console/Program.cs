@@ -26,6 +26,8 @@ public static class Program
             WriteLine("  Provide the mathematical expression in quotes.");
             
             WriteLine();
+            
+            return;
         }
 
         var evaluator = new Evaluator(new EvaluationLogger(new ConsoleOutputProvider()));

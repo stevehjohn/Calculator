@@ -1,0 +1,1 @@
+dotnet src/Calculator.Console/bin/Release/net8.0/Calculator.Console.dll "$@"
