@@ -1,9 +1,12 @@
-﻿using Calculator.Core;
+﻿using System.Diagnostics.CodeAnalysis;
+using Calculator.Console.Infrastructure;
+using Calculator.Core;
 using Calculator.Infrastructure;
 using static System.Console;
 
 namespace Calculator.Console;
 
+[ExcludeFromCodeCoverage]
 public static class Program
 {
     public static void Main(string[] args)
