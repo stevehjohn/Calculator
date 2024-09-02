@@ -13,6 +13,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{A4F828A0-1192-49F6-AAE9-2686918A9193}"
 	ProjectSection(SolutionItems) = preProject
 		..\test.sh = ..\test.sh
+		..\run.sh = ..\run.sh
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Console", "Calculator.Console\Calculator.Console.csproj", "{425630E1-88D4-4B18-B2F2-F94E9206B579}"
