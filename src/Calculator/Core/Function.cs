@@ -14,6 +14,8 @@ public class Function : Element
 
     public override void Process(Stack<Element> stack, EvaluationLogger logger = null)
     {
+        double value;
+        
         switch (_function)
         {
             case "max":
@@ -28,7 +30,7 @@ public class Function : Element
                 break;
 
             case "sin":
-                var value = stack.Pop().Value;
+                value = stack.Pop().Value;
 
                 stack.Push(new Operand(Math.Sin(value)));
 
@@ -36,6 +38,15 @@ public class Function : Element
 
                 break;
 
+            case "sqrt":
+                value = stack.Pop().Value;
+                
+                stack.Push(new Operand(Math.Sqrt(value)));
+                
+                logger?.StepComplete($"sqrt({value})", stack.Peek().Value);
+                
+                break;
+            
             default:
                 throw new ParseException($"Unknown function {_function}.");
         }
