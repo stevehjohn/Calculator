@@ -69,10 +69,10 @@ public class Operator : Element
             Operation.Add => $"{left} + {right}",
             Operation.Divide => $"{left} / {right}",
             Operation.Exponentiate => $"{left} ^ {right}",
-            Operation.LeftShift => $"{(long) left} << {(long) right}",
+            Operation.LeftShift => $"{(long) left} << {(int) right}",
             Operation.Modulus => $"{left} % {right}",
             Operation.Multiply => $"{left} * {right}",
-            Operation.RightShift => $"{(long) left} >> {(long) right}",
+            Operation.RightShift => $"{(long) left} >> {(int) right}",
             Operation.Subtract => $"{left} - {right}"
         }, stack.Peek().Value);
     }
