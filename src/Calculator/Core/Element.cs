@@ -1,6 +1,5 @@
 using Calculator.Exceptions;
 using Calculator.Infrastructure;
-using Calculator.Interfaces;
 
 namespace Calculator.Core;
 
