@@ -9,9 +9,7 @@ public class FunctionTests
     [Fact]
     public void UnknownFunctionThrowsAnException()
     {
-        var function = Element.Create("foo");
-
-        Assert.Throws<ParseException>(() => function.Process(new Stack<Element>()));
+        Assert.Throws<ParseException>(() => Element.Create("foo"));
     }
 
     [Fact]
