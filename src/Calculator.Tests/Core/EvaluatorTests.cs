@@ -46,6 +46,11 @@ public class EvaluatorTests
     [InlineData("(1 + 2 + 3) * 4", "(1 + 2 + 3) * 4|(3 + 3) * 4|6 * 4|24")]
     [InlineData("sin(1) + 1", "sin(1) + 1|0.8414709848078965 + 1|1.8414709848078965")]
     [InlineData("2 + max(3, 1)", "2 + max(3, 1)|2 + 3|5")]
+    [InlineData("4 / 2", "4 / 2|2")]
+    [InlineData("4 ^ 2", "4 ^ 2|16")]
+    [InlineData("1 << 2", "1 << 2|4")]
+    [InlineData("5 % 2", "5 % 2|1")]
+    [InlineData("4 >> 2", "4 >> 2|1")]
     public void OutputsOperationsWhenProvidedWithLogger(string expression, string expected)
     {
         var parts = expected.Split('|');
