@@ -4,7 +4,7 @@ using Calculator.Interfaces;
 
 namespace Calculator.Core;
 
-public class Operand : Element, ICreatableElement
+public class Operand : Element, ICreatableElement<Operand>
 {
     public override double Value { get; }
 
@@ -13,7 +13,7 @@ public class Operand : Element, ICreatableElement
         Value = value;
     }
 
-    public static Element CreateInstance(string expression)
+    public static Operand CreateInstance(string expression)
     {
         if (double.TryParse(expression, out var value))
         {

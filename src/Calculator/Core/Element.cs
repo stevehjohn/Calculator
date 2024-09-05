@@ -1,5 +1,6 @@
 using Calculator.Exceptions;
 using Calculator.Infrastructure;
+using Calculator.Interfaces;
 
 namespace Calculator.Core;
 
@@ -11,7 +12,7 @@ public abstract class Element
     
     public static Element Create(string expression)
     {
-        var instance = Operator.CreateInstance(expression);
+        Element instance = Operator.CreateInstance(expression);
 
         instance ??= Function.CreateInstance(expression);
 

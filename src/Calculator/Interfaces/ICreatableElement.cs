@@ -2,7 +2,7 @@ using Calculator.Core;
 
 namespace Calculator.Interfaces;
 
-public interface ICreatableElement
+public interface ICreatableElement<out T> where T : Element
 {
-    static abstract Element CreateInstance(string expression);
+    static abstract T CreateInstance(string expression);
 }

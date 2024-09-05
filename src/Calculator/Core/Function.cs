@@ -6,7 +6,7 @@ using Calculator.Interfaces;
 
 namespace Calculator.Core;
 
-public class Function : Element, ICreatableElement
+public class Function : Element, ICreatableElement<Function>
 {
     private readonly string _function;
 
@@ -15,7 +15,7 @@ public class Function : Element, ICreatableElement
         _function = function.ToLower();
     }
 
-    public static Element CreateInstance(string expression)
+    public static Function CreateInstance(string expression)
     {
         return expression.ToLower() switch
         {

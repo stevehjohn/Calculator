@@ -8,7 +8,7 @@ using Calculator.Libraries;
 
 namespace Calculator.Core;
 
-public class Operator : Element, ICreatableElement
+public class Operator : Element, ICreatableElement<Operator>
 {
     private readonly Operation _operation;
     
@@ -17,7 +17,7 @@ public class Operator : Element, ICreatableElement
         _operation = operation;
     }
 
-    public static Element CreateInstance(string expression)
+    public static Operator CreateInstance(string expression)
     {
         return expression switch
         {
