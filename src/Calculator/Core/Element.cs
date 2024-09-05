@@ -1,5 +1,6 @@
 using Calculator.Exceptions;
 using Calculator.Infrastructure;
+using Calculator.Interfaces;
 
 namespace Calculator.Core;
 
@@ -9,18 +10,14 @@ public abstract class Element
         
     public virtual double Value => throw new ParseException($"Incorrect call to .Value on Element type {GetType().Name}.");
     
-    public static Element Create(string symbol)
+    public static Element Create(string expression)
     {
-        if (char.IsLetter(symbol[0]))
-        {
-            return new Function(symbol);
-        }
+        var instance = Operator.CreateInstance(expression);
 
-        return new Operator(symbol);
-    }
+        instance ??= Function.CreateInstance(expression);
 
-    public static Element Create(double value)
-    {
-        return new Operand(value);
+        instance ??= Operand.CreateInstance(expression);
+        
+        return instance;
     }
 }

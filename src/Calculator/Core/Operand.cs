@@ -1,15 +1,26 @@
 using System.Globalization;
 using Calculator.Infrastructure;
+using Calculator.Interfaces;
 
 namespace Calculator.Core;
 
-public class Operand : Element
+public class Operand : Element, ICreatableElement
 {
     public override double Value { get; }
 
-    public Operand(double value)
+    private Operand(double value)
     {
         Value = value;
+    }
+
+    public static Element CreateInstance(string expression)
+    {
+        if (double.TryParse(expression, out var value))
+        {
+            return new Operand(value);
+        }
+
+        return null;
     }
 
     public override void Process(Stack<Element> stack, EvaluationLogger logger = null)
