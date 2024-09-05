@@ -17,8 +17,6 @@ public abstract class Element
 
         instance ??= Operand.CreateInstance(expression);
 
-        instance ??= Constant.CreateInstance(expression);
-
         if (instance == null)
         {
             throw new ParseException($"Unable to parse expression '{expression}'.");
