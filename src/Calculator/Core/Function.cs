@@ -1,5 +1,3 @@
-// ReSharper disable SpecifyACultureInStringConversionExplicitly
-
 using Calculator.Infrastructure;
 using Calculator.Interfaces;
 
@@ -36,7 +34,7 @@ public class Function : Element, ICreatableElement<Function>
                 
                 var right = stack.Pop().Value;
                 
-                stack.Push(Create(Math.Max(left, right).ToString()));
+                stack.Push(Create(Math.Max(left, right)));
 
                 logger?.StepComplete($"max({right}, {left})", stack.Peek().Value);
                 
@@ -45,7 +43,7 @@ public class Function : Element, ICreatableElement<Function>
             case "sin":
                 value = stack.Pop().Value;
 
-                stack.Push(Create(Math.Sin(value).ToString()));
+                stack.Push(Create(Math.Sin(value)));
 
                 logger?.StepComplete($"sin({value})", stack.Peek().Value);
 
@@ -54,7 +52,7 @@ public class Function : Element, ICreatableElement<Function>
             case "sqrt":
                 value = stack.Pop().Value;
                 
-                stack.Push(Create(Math.Sqrt(value).ToString()));
+                stack.Push(Create(Math.Sqrt(value)));
                 
                 logger?.StepComplete($"sqrt({value})", stack.Peek().Value);
                 

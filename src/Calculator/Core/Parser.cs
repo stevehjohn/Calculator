@@ -92,7 +92,7 @@ public class Parser
     {
         if (_expression[_position] == 'π')
         {
-            _queue.Enqueue(Element.Create(Math.PI.ToString()));
+            _queue.Enqueue(Element.Create(Math.PI));
             
             _position++;
             

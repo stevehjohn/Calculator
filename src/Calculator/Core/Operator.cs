@@ -1,7 +1,5 @@
 #pragma warning disable CS8509
 
-// ReSharper disable SpecifyACultureInStringConversionExplicitly
-
 using Calculator.Infrastructure;
 using Calculator.Interfaces;
 using Calculator.Libraries;
@@ -41,14 +39,14 @@ public class Operator : Element, ICreatableElement<Operator>
         switch (_operation)
         {
             case Operation.Negate:
-                stack.Push(Create((-stack.Pop().Value).ToString()));
+                stack.Push(Create(-stack.Pop().Value));
             
                 return;
             
             case Operation.Factorial:
                 var value = stack.Pop().Value;
                 
-                stack.Push(Create(Maths.Factorial((long) value).ToString()));
+                stack.Push(Create(Maths.Factorial((long) value)));
                 
                 logger?.StepComplete($"{value}", stack.Peek().Value);
             
@@ -59,7 +57,7 @@ public class Operator : Element, ICreatableElement<Operator>
 
         var left = stack.Pop().Value;
 
-        stack.Push(Create((_operation switch
+        stack.Push(Create(_operation switch
         {
             Operation.Add => left + right,
             Operation.Divide => left / right,
@@ -69,7 +67,7 @@ public class Operator : Element, ICreatableElement<Operator>
             Operation.Multiply => left * right,
             Operation.RightShift => (long) left >> (int) right,
             Operation.Subtract => left - right
-        }).ToString()));
+        }));
 
         logger?.StepComplete(_operation switch
         {
