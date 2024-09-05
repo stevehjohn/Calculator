@@ -1,15 +1,29 @@
+// ReSharper disable SpecifyACultureInStringConversionExplicitly
+
 using Calculator.Exceptions;
 using Calculator.Infrastructure;
+using Calculator.Interfaces;
 
 namespace Calculator.Core;
 
-public class Function : Element
+public class Function : Element, ICreatableElement
 {
     private readonly string _function;
 
-    public Function(string function)
+    private Function(string function)
     {
         _function = function.ToLower();
+    }
+
+    public static Element CreateInstance(string expression)
+    {
+        return expression.ToLower() switch
+        {
+            "max" => new Function("max"),
+            "sin" => new Function("sin"),
+            "sqrt" => new Function("sqrt"),
+            _ => null
+        };
     }
 
     public override void Process(Stack<Element> stack, EvaluationLogger logger = null)
@@ -23,7 +37,7 @@ public class Function : Element
                 
                 var right = stack.Pop().Value;
                 
-                stack.Push(new Operand(Math.Max(left, right)));
+                stack.Push(Create(Math.Max(left, right).ToString()));
 
                 logger?.StepComplete($"max({right}, {left})", stack.Peek().Value);
                 
@@ -32,7 +46,7 @@ public class Function : Element
             case "sin":
                 value = stack.Pop().Value;
 
-                stack.Push(new Operand(Math.Sin(value)));
+                stack.Push(Create(Math.Sin(value).ToString()));
 
                 logger?.StepComplete($"sin({value})", stack.Peek().Value);
 
@@ -41,7 +55,7 @@ public class Function : Element
             case "sqrt":
                 value = stack.Pop().Value;
                 
-                stack.Push(new Operand(Math.Sqrt(value)));
+                stack.Push(Create(Math.Sqrt(value).ToString()));
                 
                 logger?.StepComplete($"sqrt({value})", stack.Peek().Value);
                 

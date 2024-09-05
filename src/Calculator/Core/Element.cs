@@ -9,18 +9,19 @@ public abstract class Element
         
     public virtual double Value => throw new ParseException($"Incorrect call to .Value on Element type {GetType().Name}.");
     
-    public static Element Create(string symbol)
+    public static Element Create(string expression)
     {
-        if (char.IsLetter(symbol[0]))
+        var instance = Operator.CreateInstance(expression);
+
+        instance ??= Function.CreateInstance(expression);
+
+        instance ??= Operand.CreateInstance(expression);
+
+        if (instance == null)
         {
-            return new Function(symbol);
+            throw new ParseException($"Unable to parse expression '{expression}'.");
         }
 
-        return new Operator(symbol);
-    }
-
-    public static Element Create(double value)
-    {
-        return new Operand(value);
+        return instance;
     }
 }

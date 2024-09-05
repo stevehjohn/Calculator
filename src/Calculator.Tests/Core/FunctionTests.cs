@@ -9,9 +9,7 @@ public class FunctionTests
     [Fact]
     public void UnknownFunctionThrowsAnException()
     {
-        var function = new Function("foo");
-
-        Assert.Throws<ParseException>(() => function.Process(new Stack<Element>()));
+        Assert.Throws<ParseException>(() => Element.Create("foo"));
     }
 
     [Fact]
@@ -21,7 +19,7 @@ public class FunctionTests
 
         var stack = new Stack<Element>();
         
-        stack.Push(Element.Create(16));
+        stack.Push(Element.Create("16"));
         
         function.Process(stack);
         
@@ -35,9 +33,9 @@ public class FunctionTests
 
         var stack = new Stack<Element>();
         
-        stack.Push(Element.Create(16));
+        stack.Push(Element.Create("16"));
         
-        stack.Push(Element.Create(20));
+        stack.Push(Element.Create("20"));
         
         function.Process(stack);
         

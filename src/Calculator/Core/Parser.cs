@@ -1,3 +1,5 @@
+// ReSharper disable SpecifyACultureInStringConversionExplicitly
+
 namespace Calculator.Core;
 
 public class Parser
@@ -90,7 +92,7 @@ public class Parser
     {
         if (_expression[_position] == 'π')
         {
-            _queue.Enqueue(Element.Create(Math.PI));
+            _queue.Enqueue(Element.Create(Math.PI.ToString()));
             
             _position++;
             
@@ -109,9 +111,7 @@ public class Parser
             _position++;
         }
 
-        var number = double.Parse(_expression.Substring(start, _position - start));
-
-        _queue.Enqueue(Element.Create(number));
+        _queue.Enqueue(Element.Create(_expression.Substring(start, _position - start)));
 
         return true;
     }

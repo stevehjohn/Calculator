@@ -9,7 +9,7 @@ public class OperatorTests
     [Fact]
     public void CallingValueOnOperatorThrowsException()
     {
-        var element = new Operator("+");
+        var element = Element.Create("+");
 
         Assert.Throws<ParseException>(() => element.Value);
     }
@@ -17,6 +17,6 @@ public class OperatorTests
     [Fact]
     public void OperatorThrowsExceptionWhenPassedInvalidSymbol()
     {
-        Assert.Throws<ParseException>(() => new Operator("@"));
+        Assert.Throws<ParseException>(() => Element.Create("@"));
     }
 }

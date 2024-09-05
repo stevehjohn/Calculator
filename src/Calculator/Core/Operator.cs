@@ -1,47 +1,54 @@
 #pragma warning disable CS8509
 
-using Calculator.Exceptions;
+// ReSharper disable SpecifyACultureInStringConversionExplicitly
+
 using Calculator.Infrastructure;
+using Calculator.Interfaces;
 using Calculator.Libraries;
 
 namespace Calculator.Core;
 
-public class Operator : Element
+public class Operator : Element, ICreatableElement
 {
     private readonly Operation _operation;
     
-    public Operator(string operation)
+    private Operator(Operation operation)
     {
-        _operation = operation switch
-        {
-            "+" => Operation.Add,
-            "/" => Operation.Divide,
-            "^" => Operation.Exponentiate,
-            "!" => Operation.Factorial,
-            "<<" => Operation.LeftShift,
-            "%" => Operation.Modulus,
-            "*" => Operation.Multiply,
-            "--" => Operation.Negate,
-            ">>" => Operation.RightShift,
-            "-" => Operation.Subtract,
-            _ => throw new ParseException($"Unknown operator type '{operation}'.")
-        };
+        _operation = operation;
     }
 
+    public static Element CreateInstance(string expression)
+    {
+        return expression switch
+        {
+            "+" => new Operator(Operation.Add),
+            "/" => new Operator(Operation.Divide),
+            "^" => new Operator(Operation.Exponentiate),
+            "!" => new Operator(Operation.Factorial),
+            "<<" => new Operator(Operation.LeftShift),
+            "%" => new Operator(Operation.Modulus),
+            "*" => new Operator(Operation.Multiply),
+            "--" => new Operator(Operation.Negate),
+            ">>" => new Operator(Operation.RightShift),
+            "-" => new Operator(Operation.Subtract),
+            _ => null
+        };
+    }
+    
     public override void Process(Stack<Element> stack, EvaluationLogger logger = null)
     {
         // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
         switch (_operation)
         {
             case Operation.Negate:
-                stack.Push(new Operand(-stack.Pop().Value));
+                stack.Push(Create((-stack.Pop().Value).ToString()));
             
                 return;
             
             case Operation.Factorial:
                 var value = stack.Pop().Value;
                 
-                stack.Push(new Operand(Maths.Factorial((long) value)));
+                stack.Push(Create(Maths.Factorial((long) value).ToString()));
                 
                 logger?.StepComplete($"{value}", stack.Peek().Value);
             
@@ -52,7 +59,7 @@ public class Operator : Element
 
         var left = stack.Pop().Value;
 
-        stack.Push(new Operand(_operation switch
+        stack.Push(Create((_operation switch
         {
             Operation.Add => left + right,
             Operation.Divide => left / right,
@@ -62,7 +69,7 @@ public class Operator : Element
             Operation.Multiply => left * right,
             Operation.RightShift => (long) left >> (int) right,
             Operation.Subtract => left - right
-        }));
+        }).ToString()));
 
         logger?.StepComplete(_operation switch
         {

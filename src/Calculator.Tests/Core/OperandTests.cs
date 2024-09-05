@@ -8,7 +8,7 @@ public class OperandTests
     [Fact]
     public void OutputsOperand()
     {
-        var operand = new Operand(123d);
+        var operand = Element.Create("123");
         
         Assert.Equal("123", operand.ToString());
     }
