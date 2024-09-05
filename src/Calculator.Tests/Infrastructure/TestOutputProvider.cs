@@ -1,4 +1,5 @@
 using Calculator.Infrastructure;
+using Calculator.Interfaces;
 
 namespace Calculator.Tests.Infrastructure;
 

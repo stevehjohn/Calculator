@@ -1,4 +1,4 @@
-namespace Calculator.Infrastructure;
+namespace Calculator.Interfaces;
 
 public interface IOutputProvider
 {
