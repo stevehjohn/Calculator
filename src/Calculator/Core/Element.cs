@@ -1,6 +1,5 @@
 using Calculator.Exceptions;
 using Calculator.Infrastructure;
-using Calculator.Interfaces;
 
 namespace Calculator.Core;
 
@@ -17,6 +16,8 @@ public abstract class Element
         instance ??= Function.CreateInstance(expression);
 
         instance ??= Operand.CreateInstance(expression);
+
+        instance ??= Constant.CreateInstance(expression);
 
         if (instance == null)
         {
