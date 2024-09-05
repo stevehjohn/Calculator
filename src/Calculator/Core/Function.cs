@@ -60,9 +60,6 @@ public class Function : Element, ICreatableElement<Function>
                 logger?.StepComplete($"sqrt({value})", stack.Peek().Value);
                 
                 break;
-            
-            default:
-                throw new ParseException($"Unknown function {_function}.");
         }
     }
 
