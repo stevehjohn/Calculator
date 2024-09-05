@@ -1,5 +1,4 @@
 using System.Diagnostics.CodeAnalysis;
-using Calculator.Infrastructure;
 using Calculator.Interfaces;
 
 namespace Calculator.Console.Infrastructure;
