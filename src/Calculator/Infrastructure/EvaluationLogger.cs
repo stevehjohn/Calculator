@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Text;
 using Calculator.Extensions;
 using Calculator.Interfaces;
 
@@ -17,30 +18,51 @@ public class EvaluationLogger
 
     public void SetExpression(string expression)
     {
-        expression = expression.ToLower();
+        expression = expression.ToLower().Trim();
 
         // ReSharper disable StringIndexOfIsCultureSpecific.1
-        while (expression.IndexOf("  ") > -1)
+        while (expression.IndexOf(' ') > -1)
         {
-            expression = expression.Replace("  ", " ");
+            expression = expression.Replace(" ", string.Empty);
         }
 
-        while (expression.IndexOf("( ") > -1)
+        var builder = new StringBuilder();
+
+        for (var i = 0; i < expression.Length - 1; i++)
         {
-            expression = expression.Replace("( ", "(");
+            if (expression[i] == ',')
+            {
+                builder.Append(", ");
+                
+                continue;
+            }
+
+            if (IsOperator(expression[i].ToString()))
+            {
+                builder.Append($" {expression[i]} ");
+                
+                continue;
+            }
+
+            if (IsOperator(expression[i..(i + 2)]))
+            {
+                builder.Append($" {expression[i..(i + 2)]} ");
+
+                i++;
+                
+                continue;
+            }
+
+            builder.Append(expression[i]);
         }
 
-        while (expression.IndexOf(" )") > -1)
-        {
-            expression = expression.Replace(" )", ")");
-        }
+        builder.Append(expression[^1]);
 
-        _expression = expression;
+        _expression = builder.ToString();
         
         _output.WriteLine(_expression);
     }
     
-
     public void StepComplete(string operation, double result)
     {
         var expression = _expression.ReplaceLastOccurrence($"({operation})", result.ToString(CultureInfo.InvariantCulture));
@@ -53,5 +75,22 @@ public class EvaluationLogger
         _expression = expression;
         
         _output.WriteLine(_expression);
+    }
+
+    private bool IsOperator(string characters)
+    {
+        return characters switch
+        {
+            "!" => true,
+            "-" => true,
+            "^" => true,
+            "*" => true,
+            "/" => true,
+            "%" => true,
+            "+" => true,
+            "<<" => true,
+            ">>" => true,
+            _ => false
+        };
     }
 }
