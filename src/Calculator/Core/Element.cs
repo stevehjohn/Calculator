@@ -25,7 +25,7 @@ public abstract class Element
         return instance;
     }
 
-    public static Element Create(double value)
+    protected static Element Create(double value)
     {
         // ReSharper disable once SpecifyACultureInStringConversionExplicitly
         return Create(value.ToString());
