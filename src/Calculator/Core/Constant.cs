@@ -9,6 +9,8 @@ public class Constant : Element, ICreatableElement<Constant>
 
     private readonly double _value;
 
+    public override double Value => _value;
+
     private Constant(string name, double value)
     {
         _name = name;
