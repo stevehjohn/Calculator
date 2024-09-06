@@ -77,7 +77,7 @@ public class EvaluationLogger
         _output.WriteLine(_expression);
     }
 
-    private bool IsOperator(string characters)
+    private static bool IsOperator(string characters)
     {
         return characters switch
         {
