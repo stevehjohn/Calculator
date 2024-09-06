@@ -34,6 +34,13 @@ public class Parser
                 continue;
             }
 
+            if (ProcessForConstants())
+            {
+                _previousTokenType = TokenType.Constant;
+                
+                continue;
+            }
+
             if (ProcessForFunctions())
             {
                 _previousTokenType = TokenType.Function;
@@ -88,17 +95,24 @@ public class Parser
         return false;
     }
 
-    private bool ProcessForNumbers()
+    private bool ProcessForConstants()
     {
-        if (_expression[_position] == 'π')
+        var instance = Constant.CreateInstance(_expression[_position].ToString());
+
+        if (instance != null)
         {
-            _queue.Enqueue(Element.Create(Math.PI));
-            
+            _queue.Enqueue(instance);
+
             _position++;
             
             return true;
         }
 
+        return false;
+    }
+
+    private bool ProcessForNumbers()
+    {
         if (! (char.IsDigit(_expression[_position]) || _expression[_position] == '.'))
         {
             return false;

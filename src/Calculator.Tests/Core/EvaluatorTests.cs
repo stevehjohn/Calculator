@@ -51,6 +51,7 @@ public class EvaluatorTests
     [InlineData("1 << 2", "1 << 2|4")]
     [InlineData("5 % 2", "5 % 2|1")]
     [InlineData("4 >> 2", "4 >> 2|1")]
+    [InlineData("π + 1", "π + 1|3.141592653589793 + 1|4.141592653589793")]
     public void OutputsOperationsWhenProvidedWithLogger(string expression, string expected)
     {
         var parts = expected.Split('|');
