@@ -10,3 +10,10 @@ Can optionally log the solve steps, e.g.
 6 * 6
 36
 ```
+
+```
+6 / 2 * (2 + 1)
+3 * (2 + 1)
+3 * 3
+9
+```
