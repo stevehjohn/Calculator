@@ -1,1 +1,1 @@
-dotnet src/Calculator.Console/bin/Release/net8.0/Calculator.Console.dll "$@"
+dotnet run --project src/Calculator.Console/Calculator.Console.csproj -c Release "$@"
