@@ -17,3 +17,10 @@ Can optionally log the solve steps, e.g.
 3 * 3
 9
 ```
+
+```csharp
+// Pass in null to Evaluator if no step logging requiured.
+var evaluator = new Evaluator(new EvaluationLogger(new ConsoleOutputProvider()));
+
+var result = evaluator.Evaluate("6 / 2 * (2 + 1)");
+```
