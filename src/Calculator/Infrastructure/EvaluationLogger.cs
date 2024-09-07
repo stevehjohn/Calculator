@@ -37,14 +37,21 @@ public class EvaluationLogger
                 continue;
             }
 
-            if (IsOperator(expression[i].ToString()))
+            if (IsBinaryOperator(expression[i].ToString()))
             {
                 builder.Append($" {expression[i]} ");
                 
                 continue;
             }
+            
+            if (IsUnaryOperator(expression[i].ToString()))
+            {
+                builder.Append(expression[i]);
+                
+                continue;
+            }
 
-            if (IsOperator(expression[i..(i + 2)]))
+            if (IsBinaryOperator(expression[i..(i + 2)]))
             {
                 builder.Append($" {expression[i..(i + 2)]} ");
 
@@ -77,11 +84,10 @@ public class EvaluationLogger
         _output.WriteLine(_expression);
     }
 
-    private static bool IsOperator(string characters)
+    private static bool IsBinaryOperator(string characters)
     {
         return characters switch
         {
-            "!" => true,
             "-" => true,
             "^" => true,
             "*" => true,
@@ -90,6 +96,15 @@ public class EvaluationLogger
             "+" => true,
             "<<" => true,
             ">>" => true,
+            _ => false
+        };
+    }
+    
+    private static bool IsUnaryOperator(string characters)
+    {
+        return characters switch
+        {
+            "!" => true,
             _ => false
         };
     }

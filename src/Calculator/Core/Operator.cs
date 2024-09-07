@@ -48,7 +48,7 @@ public class Operator : Element, ICreatableElement<Operator>
                 
                 stack.Push(Create(Maths.Factorial((long) value)));
                 
-                logger?.StepComplete($"{value}", stack.Peek().Value);
+                logger?.StepComplete($"{value}!", stack.Peek().Value);
             
                 return;
         }
