@@ -35,16 +35,22 @@ public class Operator : Element, ICreatableElement<Operator>
     
     public override void Process(Stack<Element> stack, EvaluationLogger logger = null)
     {
+        double value;
+        
         // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
         switch (_operation)
         {
             case Operation.Negate:
-                stack.Push(Create(-stack.Pop().Value));
-            
+                value = stack.Pop().Value;
+                
+                stack.Push(Create(-value));
+
+                logger?.StepComplete($" - {value}", stack.Peek().Value);
+
                 return;
             
             case Operation.Factorial:
-                var value = stack.Pop().Value;
+                value = stack.Pop().Value;
                 
                 stack.Push(Create(Maths.Factorial((long) value)));
                 
