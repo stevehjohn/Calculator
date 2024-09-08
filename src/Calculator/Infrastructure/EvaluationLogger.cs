@@ -11,6 +11,8 @@ public class EvaluationLogger
 
     private readonly IOutputProvider _output;
 
+    private string _previous;
+
     public EvaluationLogger(IOutputProvider output)
     {
         _output = output;
@@ -91,6 +93,8 @@ public class EvaluationLogger
             expression = expression.Replace("  ", " ");
         }
 
+        _previous = expression;
+        
         _output.WriteLine(expression);
     }
     
@@ -110,7 +114,14 @@ public class EvaluationLogger
             expression = expression.Replace("  ", " ");
         }
 
+        if (expression == _previous)
+        {
+            return;
+        }
+
         _output.WriteLine(expression);
+
+        _previous = expression;
     }
 
     private static bool IsBinaryOperator(string characters)
