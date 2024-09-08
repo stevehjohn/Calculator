@@ -109,11 +109,6 @@ public class EvaluationLogger
 
         _expression = expression;
 
-        while (expression.IndexOf("  ") > -1)
-        {
-            expression = expression.Replace("  ", " ");
-        }
-
         if (expression == _previous)
         {
             return;
