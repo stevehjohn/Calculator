@@ -28,19 +28,32 @@ public class EvaluationLogger
 
         var builder = new StringBuilder();
 
+        var isUnary = true;
+        
         for (var i = 0; i < expression.Length - 1; i++)
         {
             if (expression[i] == ',')
             {
                 builder.Append(", ");
+
+                isUnary = true;
                 
                 continue;
             }
 
             if (IsBinaryOperator(expression[i].ToString()))
             {
-                builder.Append($" {expression[i]} ");
+                if (isUnary)
+                {
+                    builder.Append($" {expression[i]}");
+                }
+                else
+                {
+                    builder.Append($" {expression[i]} ");
                 
+                    isUnary = true;
+                }
+
                 continue;
             }
             
@@ -55,12 +68,16 @@ public class EvaluationLogger
             {
                 builder.Append($" {expression[i..(i + 2)]} ");
 
+                isUnary = true;
+
                 i++;
                 
                 continue;
             }
 
             builder.Append(expression[i]);
+
+            isUnary = false;
         }
 
         builder.Append(expression[^1]);

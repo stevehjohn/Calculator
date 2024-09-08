@@ -45,7 +45,7 @@ public class Operator : Element, ICreatableElement<Operator>
                 
                 stack.Push(Create(-value));
 
-                logger?.StepComplete($" - {value}", stack.Peek().Value);
+                logger?.StepComplete($" -{value}", stack.Peek().Value);
 
                 return;
             
