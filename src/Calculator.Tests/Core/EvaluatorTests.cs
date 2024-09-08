@@ -55,6 +55,7 @@ public class EvaluatorTests
     [InlineData("(5+1)*(8-2)", "(5 + 1) * (8 - 2)|6 * (8 - 2)|6 * 6|36")]
     [InlineData("max(1,2)", "max(1, 2)|2")]
     [InlineData("5! + 1", "5! + 1|120 + 1|121")]
+    [InlineData("5 + -1", "5 +  -1|5 + -1|4")]
     public void OutputsOperationsWhenProvidedWithLogger(string expression, string expected)
     {
         var parts = expected.Split('|');
