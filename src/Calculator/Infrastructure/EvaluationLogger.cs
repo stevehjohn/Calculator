@@ -82,9 +82,16 @@ public class EvaluationLogger
 
         builder.Append(expression[^1]);
 
-        _expression = builder.ToString();
+        expression = builder.ToString();
+
+        _expression = expression;
         
-        _output.WriteLine(_expression);
+        while (expression.IndexOf("  ") > -1)
+        {
+            expression = expression.Replace("  ", " ");
+        }
+
+        _output.WriteLine(expression);
     }
     
     public void StepComplete(string operation, double result)
@@ -97,8 +104,13 @@ public class EvaluationLogger
         }
 
         _expression = expression;
-        
-        _output.WriteLine(_expression);
+
+        while (expression.IndexOf("  ") > -1)
+        {
+            expression = expression.Replace("  ", " ");
+        }
+
+        _output.WriteLine(expression);
     }
 
     private static bool IsBinaryOperator(string characters)
